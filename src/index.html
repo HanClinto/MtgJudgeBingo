@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>MTG Judge TEAM-GO (BINGO)</title>
+  
+  <meta name="robots" content="nofollow">
+  <meta name="googlebot" content="nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style type="text/css">
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-container>div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+  </style>
+  <script type="text/javascript" src="./jquery.js"></script>
+  <script type="text/javascript" src="./messages.js"></script>
+  <script type="text/javascript" src="./util.js"></script>
+  <script type="text/javascript">
+    window.onload=function()
+    {
+// Group all appropriate messages into one appended array
+var messages = [];
+// TODO: Which are used should eventually be gotten from the array of checkboxes
+messages = messages.concat(optionsGeneral);
+messages = messages.concat(optionsJudging);
+messages = messages.concat(optionsStandard);
+messages = messages.concat(optionsModern);
+messages = messages.concat(optionsLegacy);
+
+var freeMessages = [];
+freeMessages = freeMessages.concat(optionsFree);
+
+// Shuffle our chosen messages
+shuffle(messages);
+shuffle(freeMessages);
+
+$('.bingo-space').each(function(i, obj) {
+  console.log("Setting div #" + i + " to " + messages[i]);
+  obj.innerHTML = messages[i];
+});
+$('.bingo-space-free').each(function(i, obj) {
+  console.log("Setting free space #" + i + " to " + freeMessages[i]);
+  obj.innerHTML = freeMessages[i] + " (FREE)";
+});
+    }
+
+</script>
+</head>
+
+<body>
+  <div id="bingogrid" class="grid-container">
+    <div class="bingo-space">.</div>
+    <div class="bingo-space">.</div>
+    <div class="bingo-space">.</div>
+    <div class="bingo-space">.</div>
+    <div class="bingo-space">.</div>
+
+    <div class="bingo-space">.</div>
+    <div class="bingo-space">.</div>
+    <div class="bingo-space">.</div>
+    <div class="bingo-space">.</div>
+    <div class="bingo-space">.</div>
+
+    <div class="bingo-space">.</div>
+    <div class="bingo-space">.</div>
+    <div class="bingo-space-free">.</div>
+    <div class="bingo-space">.</div>
+    <div class="bingo-space">.</div>
+
+    <div class="bingo-space">.</div>
+    <div class="bingo-space">.</div>
+    <div class="bingo-space">.</div>
+    <div class="bingo-space">.</div>
+    <div class="bingo-space">.</div>
+
+    <div class="bingo-space">.</div>
+    <div class="bingo-space">.</div>
+    <div class="bingo-space">.</div>
+    <div class="bingo-space">.</div>
+    <div class="bingo-space">.</div>
+
+
+
+  </div>
+</body></html>
